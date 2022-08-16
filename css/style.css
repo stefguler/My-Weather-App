@@ -1,0 +1,92 @@
+/* Small Reset */
+*::before, *::after, * {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: lightyellow;
+  font-size: 16px;
+  color: black;
+  font-family: 'Roboto', sans-serife;
+  min-height: 100vh;
+}
+
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+header img {
+  width: 40%;
+  margin: 20rem;
+  position: absolute;
+  opacity: 20%; 
+  z-index: -999;
+}
+
+.title {
+  color:black;
+  font-family: 'Crafty Girls', cursive;
+  padding: 7rem 0;
+  font-weight: bold;
+  font-size: 42px;
+  position: relative;
+
+}
+
+.weatherdata-container {
+  display: flex;
+  background-color: white;
+  flex-direction: column;
+  align-items: center;
+  height: 20rem;
+  width: 40rem;
+  
+  padding: 2rem;
+  border-radius: 2rem;
+}
+
+
+input {
+  height: 3rem;
+  width: 30rem;
+  font-size: 24px;
+  padding: 1rem;
+  border-radius: 1rem;
+  border: none;
+  text-align: center;
+  background-color: lightyellow;
+  margin-bottom: 2rem;
+}
+
+.degree {
+  font-size: 28px;
+  color: black;
+}
+
+
+footer {
+  margin-top: auto;
+  padding: 2rem;
+}
+
+.copyright {
+  color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+

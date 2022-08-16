@@ -4,18 +4,39 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Check that Weather!!</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css"> 
+    <title>Weather Check Site</title>
 </head>
 <body>
+   
+    <header>
+        <div class="title">
+           <h1>What's the WEATHER?</h1>
+        </div>
+        <img src="images/weather-icon-png-11063.png" alt="sundAndCloudsImage">
+    </header>
+    <main>
+        <div class="weatherdata-container">
+            
+            <form>
+                    <input id="cityinput" type="text" placeholder="Enter City here">
+            </form>
+            
+            <div class="introText"></div>
+            <div class="degree"></div>
+            <div class="weatherCity"></div>
+        </div>
 
-    <h1>WEATHER APP</h1>
-    <h2>Enter a City</h2>
-    <form>
-        <input id="cityinput" type="text">
-    </form>
-    <div class="degree"></div>
-    <div class="weatherCity"></div>
-    <small>	&copy sDev</small>
+
+    </main>
+    <footer>
+        <small class="copyright">&copy sDev Solutions 2022</small>
+    </footer>
+    
 
 <script>
 
@@ -40,9 +61,10 @@
 
     let whatever = (data) => {
         let templateString1 = `${data.main.temp} °C`
-        let templateString2 = `in ${inputbox.valu}`
+        let templateString2 = `in ${inputbox.value}!`
+        document.querySelector(".introText").innerHTML='It is'
         document.querySelector(".degree").innerHTML=templateString1
-        document.querySelector(".weatherCity").templateString2
+        document.querySelector(".weatherCity").innerHTML=templateString2
     }
 
 
