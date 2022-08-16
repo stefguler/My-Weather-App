@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check that Weather!!</title>
+</head>
+<body>
+
+    <h1>WEATHER APP</h1>
+    <h2>Enter a City</h2>
+    <form>
+        <input id="cityinput" type="text">
+    </form>
+    <div class="degree"></div>
+    <div class="weatherCity"></div>
+    <small>	&copy Martin is the best Teacher</small>
+
+<script>
+
+    let city;
+    const inputbox = document.querySelector("#cityinput");
+    const form = document.querySelector("form");
+    
+    form.addEventListener("submit", e => {
+        e.preventDefault();
+        city = inputbox.value.toLowerCase();
+        console.log(city)
+        
+        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c0d9799d936ec2a8d83a829cf6c15d29&units=metric`)
+            .then((response) => {
+                return response.json()
+            })
+            .then((data) => {
+                console.log(data.main.temp)
+                whatever(data)
+            })
+    });
+
+    let whatever = (data) => {
+        let templateString1 = `${data.main.temp} °C`
+        let templateString2 = `in ${inputbox.valu}`
+        document.querySelector(".degree").innerHTML=templateString1
+        document.querySelector(".weatherCity").templateString2
+    }
+
+
+</script>   
+</body>
+
+</html>
