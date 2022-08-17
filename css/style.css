@@ -1,3 +1,13 @@
+
+/* Variables */
+:root {
+  --light-main-color : #222;
+  --light-background : lightyellow;
+  --light-heading : blue;
+  --dark-main-color : #fff;
+  --dark-background : #222;
+}
+
 /* Small Reset */
 *::before, *::after, * {
   box-sizing: border-box;
@@ -6,27 +16,40 @@
 }
 
 body {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  background: lightyellow;
-  font-size: 16px;
-  color: black;
-  font-family: 'Roboto', sans-serife;
-  min-height: 100vh;
+  font-family: 'Quicksand', sans-serif;
+  font-weight: 300;
+  background: var(--light-background);
+  color: var(--light-main-color);
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-items: center;
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  font-family: 'Quicksand', sans-serif;
+  color: var(--light-heading);
 }
 
 header {
+  margin-top: 3rem;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
+}
+
+header h1 {
+  position: relative;
+  text-transform: uppercase;
+}
+
+header > div > h1 > i {
+  font-size: 2rem;
+  color: black;
+  position: absolute;
+  top: 0;
+  cursor: pointer;
+}
+
+header h1 > i:hover {
+  color: gold;
 }
 
 header img {
@@ -37,10 +60,17 @@ header img {
   z-index: -999;
 }
 
+main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-items: center;
+}
+
 .title {
   color:black;
   font-family: 'Crafty Girls', cursive;
-  padding: 7rem 0;
+  padding: 3rem 0;
   font-weight: bold;
   font-size: 42px;
   position: relative;
@@ -52,7 +82,7 @@ header img {
   background-color: white;
   flex-direction: column;
   align-items: center;
-  height: 20rem;
+  height: 43rem;
   width: 40rem;
   
   padding: 2rem;
@@ -72,15 +102,73 @@ input {
   margin-bottom: 2rem;
 }
 
-.degree {
-  font-size: 28px;
-  color: black;
+.output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
 }
 
+.output img {
+  width: 50%;
+  border: 20px lightyellow solid;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.output .temp {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.output .weather_data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 1rem;
+}
+
+.output .feels {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.output .details {
+  font-weight: bold;
+}
+
+ul {
+  list-style: none;;
+}
+
+.output .weather_details ul {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-top: 2rem;
+  list-style: none;;
+}
+
+.output .weather_details ul li {
+  margin: 0.4rem;
+}
+
+.output ul li i {
+  margin-right: 0.4rem;
+  color: var(--light-heading)
+}
+
+.output .sunrise-set-data ul {
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 1rem;
+}
+
+.output .sunrise-set-data ul li {
+  text-align: center;
+}
 
 footer {
-  margin-top: auto;
-  padding: 2rem;
+   margin: 2rem;
 }
 
 .copyright {
@@ -90,3 +178,44 @@ footer {
   justify-content: center;
 }
 
+/* Dark Mode */
+body.dark {
+  background: var(--dark-background);
+  color: var(--dark-main-color);
+}
+
+.dark .title h1 {
+  color: white;
+}
+
+.dark .weatherdata-container {
+  background-color: var(--dark-background);
+  border: solid 1px white;
+}
+
+.dark input {
+  background-color: var(--dark-main-color);
+}
+
+.dark small {
+  color: var(--dark-main-color);
+}
+
+.dark  header > div > h1 > i {
+  color: gold;
+}
+
+.dark header h1 > i:hover {
+  color: white;
+}
+
+.dark .output img {
+  width: 50%;
+  border: 5px white solid;
+  border-radius: 50%;
+  margin-bottom: 2rem;
+}
+
+.dark .output ul li i {
+  color: var(--dark-main-color)
+}

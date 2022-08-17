@@ -1,74 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/style.css"> 
-    <title>Weather Check Site</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Crafty+Girls&family=Quicksand:wght@300;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@700&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="css/style.css">
+<script src="code/code.js" defer></script>
+
+<title>Whats the Weather?</title>
+
 </head>
 <body>
    
     <header>
         <div class="title">
-           <h1>What's the WEATHER?</h1>
+           <h1>What's the WEATHER? <i class="fa-solid fa-moon"></i></h1>       
         </div>
         <img src="images/weather-icon-png-11063.png" alt="sundAndCloudsImage">
     </header>
     <main>
         <div class="weatherdata-container">
-            
             <form>
-                    <input id="cityinput" type="text" placeholder="Enter City here">
+                <input class="cityInput" type="text" placeholder="Enter your city">
             </form>
-            
-            <div class="introText"></div>
-            <div class="degree"></div>
-            <div class="weatherCity"></div>
+            <div class="output">
+                Enter a city to view data
+            </div>
         </div>
-
-
     </main>
     <footer>
-        <small class="copyright">&copy sDev Solutions 2022</small>
+        <small class="copyright">&copy by sDev Solutions 2022</small>
     </footer>
-    
-
-<script>
-
-    let city;
-    const inputbox = document.querySelector("#cityinput");
-    const form = document.querySelector("form");
-    
-    form.addEventListener("submit", e => {
-        e.preventDefault();
-        city = inputbox.value.toLowerCase();
-        console.log(city)
-        
-        fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=c0d9799d936ec2a8d83a829cf6c15d29&units=metric`)
-            .then((response) => {
-                return response.json()
-            })
-            .then((data) => {
-                console.log(data.main.temp)
-                whatever(data)
-            })
-    });
-
-    let whatever = (data) => {
-        let templateString1 = `${data.main.temp} °C`
-        let templateString2 = `in ${inputbox.value}!`
-        document.querySelector(".introText").innerHTML='It is'
-        document.querySelector(".degree").innerHTML=templateString1
-        document.querySelector(".weatherCity").innerHTML=templateString2
-    }
-
-
-</script>   
 </body>
 
 </html>
