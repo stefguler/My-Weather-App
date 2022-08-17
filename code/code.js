@@ -31,8 +31,8 @@ function writeData(data) {
        <p>in ${data.name}</p>
        <div class="weather_data">
            <p>It feels like <span class="feels">${data.main.feels_like} °C</span>, while <span>${data.weather[0].description}.</span></p>
-           <p>Minimun observed temparature: <span class="feels">${data.main.temp_min} °C</span><p>
-           <p>Maximum observed temparature: <span class="feels">${data.main.temp_max} °C</span></p>
+           <p>Minimun observed temperature: <span class="feels">${data.main.temp_min} °C</span><p>
+           <p>Maximum observed temperature: <span class="feels">${data.main.temp_max} °C</span></p>
            <div class="weather_details">
             <ul>
                 <li><i class="fa-solid fa-droplet"></i>Humidity: <span class="details">${data.main.humidity} %</span></li>
