@@ -1,3 +1,4 @@
 # My-Weather-App
-easy simple weather app, you can check weather by specific city name
-using https://openweathermap.org/current
+weather check ap: Check the weather by specific city name as input
+<br>
+using https://openweathermap.org/current API
